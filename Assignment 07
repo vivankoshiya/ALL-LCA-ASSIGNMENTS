@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+struct student 
+{ 
+    int roll; 
+    char name[50]; 
+    int m1, m2, m3; 
+    int total;
+    float per;
+};
+
+int main()
+{ 
+    int n, i; 
+    printf("-----------Student Information-------------");
+    printf("\n Enter number of students: ");
+    scanf("%d", &n);
+    struct student strarr[n];
+
+    for(i=0;i<n;i++)
+    {
+        printf("Enter the roll no. of students: ");
+        scanf("%d", &strarr[i].roll);
+        printf("Enter the marks of 3 subjects: ");
+        scanf("%d%d%d", &strarr[i].m1, &strarr[i].m2, &strarr[i].m3);
+        printf("Enter the name of the student: ");
+        scanf("%s" ,&strarr[i].name);
+
+        strarr[i].total=strarr[i].m1+strarr[i].m2+strarr[i].m3;
+        strarr[i].per=strarr[i].total/3.0;
+    }
+    printf("\n roll no. | \t name | \t marks | \t total | \t percentage | \t result |");
+    for(i=0;i<n;i++);
+    {
+        printf("\n %d" , strarr[i].roll);
+        printf("\t\t\t");
+        puts(strarr[i].name);
+        printf("\t\t");
+        printf("\t\t\t %d" , strarr[i].m1);
+        printf("\t %d" , strarr[i].m2);
+        printf("\t %d" , strarr[i].m3);
+        printf("\t\t %d" , strarr[i].total);
+        printf("\t %f" , strarr[i].per);
+
+        if(strarr[i].per<20)
+        {
+            printf("fail");
+        }
+        else
+        {
+            printf("pass\n");
+        }
+    }
+    return 0;
+}
