@@ -1,0 +1,84 @@
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str1[100], str2[100];
+    int ch, i, j;
+
+    do
+    {
+        printf("\n\t MENU");
+        printf("\n1. Find Length");
+        printf("\n2. Copy String");
+        printf("\n3. Join Strings");
+        printf("\n4. Compare Strings");
+        printf("\n5. EXIT");
+
+        printf("\nEnter your choice: ");
+        scanf("%d", &ch);
+
+        switch(ch)
+        {
+            case 1:
+                printf("Enter the string: ");
+                scanf("%99s", str1);
+
+                i = strlen(str1);
+
+                printf("Length of String: %d\n\n", i);
+                break;
+
+            case 2:
+                printf("\nEnter first string: ");
+                scanf("%99s", str1);
+
+                printf("\nEnter second string: ");
+                scanf("%99s", str2);
+
+                strcpy(str2, str1);
+
+                printf("String after copying: %s\n\n", str2);
+                break;
+
+            case 3:
+                printf("\nEnter first string: ");
+                scanf("%99s", str1);
+
+                printf("\nEnter second string: ");
+                scanf("%99s", str2);
+
+                strcat(str1, str2);
+
+                printf("String after concatenation: %s\n\n", str1);
+                break;
+
+            case 4:
+                printf("\nEnter first string: ");
+                scanf("%99s", str1);
+
+                printf("\nEnter second string: ");
+                scanf("%99s", str2);
+
+                j = strcmp(str1, str2);
+
+                if(j == 0)
+                    printf("Strings are same\n\n");
+                else
+                    printf("Strings are not same\n\n");
+
+                break;
+
+            case 5:
+                printf("\nExiting program...\n");
+                break;
+
+            default:
+                printf("Invalid Input. Please enter valid input.\n\n");
+        }
+
+    } while(ch != 5);
+
+    return 0;
+}
